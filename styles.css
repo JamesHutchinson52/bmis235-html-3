@@ -57,3 +57,13 @@ footer {
     color: #777777;
     margin-top: 40px;
 }
+
+/* STYLE 1: rounded corners on the menu buttons, and they lift slightly on hover */
+nav img {
+    border-radius: 8px;
+    transition: transform 0.15s;
+}
+
+nav a:hover img {
+    transform: translateY(-3px);
+}
