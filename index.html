@@ -39,7 +39,51 @@
      This box is empty on purpose. In Part 7 you paste an interactive
      graphic BETWEEN the opening <div> and the closing </div> below.
      ===================================================================== -->
-<div class="showcase"></div>
+<div class="showcase">
+<!-- HTML: three flip cards, one per player. Click a card to flip it and see career stats. -->
+<div class="showcase-cards">
+  <button class="showcase-card" type="button" aria-pressed="false">
+    <span class="showcase-front"><strong>Nadal</strong><em>The King of Clay</em><small>Click to flip</small></span>
+    <span class="showcase-back"><strong>22</strong>Grand Slam titles<small>14 French Opens</small></span>
+  </button>
+  <button class="showcase-card" type="button" aria-pressed="false">
+    <span class="showcase-front"><strong>Djokovic</strong><em>Nole</em><small>Click to flip</small></span>
+    <span class="showcase-back"><strong>24</strong>Grand Slam titles<small>10 Australian Opens</small></span>
+  </button>
+  <button class="showcase-card" type="button" aria-pressed="false">
+    <span class="showcase-front"><strong>Federer</strong><em>The Maestro</em><small>Click to flip</small></span>
+    <span class="showcase-back"><strong>20</strong>Grand Slam titles<small>8 Wimbledons</small></span>
+  </button>
+</div>
+
+<!-- CSS: brand colors and flip animation. Every rule starts with .showcase so it only affects this box. -->
+<style>
+.showcase { max-width: 640px; margin: 30px auto; }
+.showcase .showcase-cards { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.showcase .showcase-card { width: 180px; height: 220px; padding: 0; border: none; background: none; cursor: pointer; perspective: 800px; position: relative; font-family: Verdana, Geneva, sans-serif; }
+.showcase .showcase-front,
+.showcase .showcase-back { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; border: 4px solid #123b24; backface-visibility: hidden; transition: transform 0.5s; }
+.showcase .showcase-front { background-color: #1f5f3a; color: #d9f24a; }
+.showcase .showcase-back { background-color: #d9f24a; color: #123b24; transform: rotateY(180deg); font-size: 15px; }
+.showcase .showcase-card.is-flipped .showcase-front { transform: rotateY(-180deg); }
+.showcase .showcase-card.is-flipped .showcase-back { transform: rotateY(0deg); }
+.showcase .showcase-front strong { font-size: 22px; }
+.showcase .showcase-back strong { font-size: 54px; line-height: 1; }
+.showcase .showcase-front em { color: #ffffff; font-size: 14px; }
+.showcase .showcase-card small { font-size: 12px; opacity: 0.8; }
+.showcase .showcase-card:focus-visible { outline: 3px solid #123b24; outline-offset: 4px; border-radius: 12px; }
+</style>
+
+<!-- JavaScript: flips a card when it is clicked (or chosen with the keyboard). -->
+<script>
+document.querySelectorAll('.showcase .showcase-card').forEach(function (card) {
+  card.addEventListener('click', function () {
+    var flipped = card.classList.toggle('is-flipped');
+    card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+  });
+});
+</script>
+</div>
 
 <p>Have a favorite Big Three match I should add? <a href="mailto:jhutchinson@zagmail.gonzaga.edu">Email me</a>.</p>
 
