@@ -67,3 +67,14 @@ nav img {
 nav a:hover img {
     transform: translateY(-3px);
 }
+
+/* STYLE 2: links in the text are court green, and get a tennis-ball yellow highlight on hover */
+p a {
+    color: #1f5f3a;
+    font-weight: bold;
+}
+
+p a:hover {
+    background-color: #d9f24a;
+    color: #123b24;
+}
