@@ -78,3 +78,13 @@ p a:hover {
     background-color: #d9f24a;
     color: #123b24;
 }
+
+/* STYLE 3: section headings (h2) in court green with a tennis-ball yellow underline */
+h2 {
+    color: #1f5f3a;
+    max-width: 600px;
+    margin: 36px auto 10px auto;
+    padding-bottom: 6px;
+    border-bottom: 4px solid #d9f24a;
+    font-size: 24px;
+}
